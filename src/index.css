@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+@theme static {
+    --color-*: initial;
+    --color-paper: #fcf8ef;
+    --color-sand: #f0eade;
+    --color-blush: #f3e7df;
+    --color-clay: #e4d5c4;
+    --color-cream: #f4ead8;
+    --color-ink: #39271f;
+    --color-muted: #75655a;
+    --color-line: #e3dacb;
+    --color-edge: #cbbdad;
+    --color-gold: #ab9574;
+    --color-gold-light: #dcb899;
+    --color-accent: #7d3540;
+    --color-accent-dark: #612c35;
+    --color-error: #9b2738;
+    --color-white: #fff;
+
+    --font-*: initial;
+    --font-sans: 'DM Sans', sans-serif;
+    --font-serif: 'Playfair Display', Georgia, serif;
+
+    --radius-arch: 10rem;
+
+    --shadow-dialog: 0 1.5rem 6rem rgb(57 39 31 / 0.2);
+    --shadow-toast: 0 0.25rem 1.25rem rgb(57 39 31 / 0.15);
+}
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 1.5rem;
+    }
+
+    body {
+        @apply bg-paper font-sans text-ink antialiased;
+    }
+
+    em {
+        @apply font-normal text-accent;
+    }
+
+    :focus-visible {
+        @apply outline-2 outline-offset-4 outline-accent;
+    }
+
+    svg {
+        @apply shrink-0 fill-none stroke-current;
+    }
+
+    dialog::backdrop {
+        background: rgb(57 39 31 / 0.5);
+        backdrop-filter: blur(4px);
+    }
+
+    summary::-webkit-details-marker {
+        display: none;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        html {
+            scroll-behavior: auto;
+        }
+    }
+}
+
+@utility wrap {
+    @apply mx-auto w-full max-w-7xl px-5 md:px-7 lg:px-12;
+}
