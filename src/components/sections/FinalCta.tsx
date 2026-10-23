@@ -2,8 +2,8 @@ import { Button } from '../global/Button';
 
 export function FinalCta() {
     return (
-        <section className="wrap">
-            <div className="rounded-md bg-ink px-5 pt-8 pb-10 text-center text-on-dark md:px-6">
+        <section className="bg-accent py-14 text-center text-on-dark md:py-20">
+            <div className="wrap">
                 <span aria-hidden="true" className="mb-2 block font-serif text-4xl text-highlight-soft">
                     ♡
                 </span>

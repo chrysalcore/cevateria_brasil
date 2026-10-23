@@ -1,3 +1,4 @@
+import bombons from '../../assets/images/bombons.webp';
 import { Eyebrow } from '../global/Eyebrow';
 import { TextLink } from '../global/TextLink';
 
@@ -5,14 +6,17 @@ export function Essence() {
     return (
         <section id="essencia" className="bg-surface py-12 md:py-18">
             <div className="wrap grid items-center gap-8 md:grid-cols-[0.9fr_1.1fr] md:gap-10 lg:gap-24">
-                <div
-                    aria-hidden="true"
-                    className="relative mx-auto flex min-h-64 w-full max-w-64 flex-col items-center justify-center rounded-t-arch border border-highlight-soft/60 before:absolute before:inset-3 before:rounded-[inherit] before:border before:border-highlight-soft/30 md:min-h-82 md:max-w-82"
-                >
-                    <svg viewBox="0 0 120 160" className="h-24 w-20 -rotate-12 text-highlight-soft md:h-32 md:w-24" strokeWidth="1.2">
-                        <path d="M58 153 67 12M64 39C30 36 24 16 30 8c29 4 34 14 34 31Zm-2 27c37 0 43-23 38-32-30 3-37 16-38 32Zm-2 26C25 86 20 65 26 56c29 5 34 18 34 36Zm-2 28c34-1 42-23 38-33-29 1-37 15-38 33Z" />
-                    </svg>
-                    <i className="mt-4 text-center font-serif text-xl leading-normal md:text-2xl">
+                <div className="relative mx-auto h-96 w-full max-w-xs rounded-t-arch bg-surface-strong md:h-120 md:max-w-sm">
+                    <img
+                        src={bombons}
+                        alt="Bombons embrulhados em papel dourado dentro de uma tigela de cerâmica"
+                        width={960}
+                        height={1280}
+                        loading="lazy"
+                        className="size-full rounded-[inherit] object-cover"
+                    />
+                    <span aria-hidden="true" className="pointer-events-none absolute inset-3 rounded-[inherit] border border-on-dark/70" />
+                    <i className="absolute inset-x-6 bottom-6 rounded-sm bg-page/95 px-4 py-3 text-center font-serif text-lg leading-normal">
                         um pouco de calma,
                         <br />
                         uma dose de carinho.
