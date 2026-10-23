@@ -3,16 +3,10 @@ import { steps } from '../../data/steps';
 import { Eyebrow } from '../global/Eyebrow';
 import { ImageBackdrop } from '../global/ImageBackdrop';
 
-export function HowItWorks({ variant }: { variant: 'fade' | 'curve' }) {
+export function HowItWorks() {
     return (
         <section className="relative isolate overflow-hidden">
-            <ImageBackdrop
-                src={bombons}
-                alt="Bombons embrulhados em papel dourado dentro de uma tigela de cerâmica"
-                side="left"
-                variant={variant}
-            />
-            <div className="wrap -mt-12 pb-12 md:mt-0 md:flex md:min-h-128 md:items-center md:justify-end md:py-20">
+            <div className="wrap py-12 md:flex md:min-h-128 md:items-center md:justify-end md:py-20">
                 <div className="md:w-1/2 md:pl-8 lg:w-5/12">
                     <Eyebrow>Do seu jeito, sem complicação</Eyebrow>
                     <h2 className="mt-4 mb-8 font-serif text-4xl leading-tight tracking-tight">
@@ -37,6 +31,11 @@ export function HowItWorks({ variant }: { variant: 'fade' | 'curve' }) {
                     </ol>
                 </div>
             </div>
+            <ImageBackdrop
+                src={bombons}
+                alt="Bombons embrulhados em papel dourado dentro de uma tigela de cerâmica"
+                side="left"
+            />
         </section>
     );
 }

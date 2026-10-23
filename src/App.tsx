@@ -11,8 +11,6 @@ import { HowItWorks } from './components/sections/HowItWorks';
 import { Products } from './components/sections/Products';
 import { Values } from './components/sections/Values';
 
-const backdrop = (new URLSearchParams(location.search).get('backdrop') ?? 'fade') as 'fade' | 'curve';
-
 export function App() {
     const [cartOpen, setCartOpen] = useState(false);
 
@@ -27,11 +25,11 @@ export function App() {
             <Announcement />
             <Header onOpenCart={() => setCartOpen(true)} />
             <main id="conteudo">
-                <Hero variant={backdrop} />
+                <Hero />
                 <Values />
                 <Products />
                 <Essence />
-                <HowItWorks variant={backdrop} />
+                <HowItWorks />
                 <Faq />
                 <FinalCta />
             </main>

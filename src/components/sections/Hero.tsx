@@ -3,26 +3,10 @@ import { Button } from '../global/Button';
 import { Eyebrow } from '../global/Eyebrow';
 import { ImageBackdrop } from '../global/ImageBackdrop';
 
-export function Hero({ variant }: { variant: 'fade' | 'curve' }) {
+export function Hero() {
     return (
         <section id="inicio" className="relative isolate overflow-hidden">
-            <ImageBackdrop
-                src={bombons}
-                alt="Tigela com bombons embrulhados em papel dourado e cartão “Feito com muito amor”"
-                side="right"
-                variant={variant}
-                priority
-            >
-                <div className="absolute right-6 bottom-10 hidden flex-col gap-1.5 rounded-sm bg-page/95 px-5 py-4 md:flex lg:right-12">
-                    <span className="text-xs tracking-widest">CEVADA + CHOCOLATE</span>
-                    <i className="font-serif text-lg">Um encontro cheio de sabor.</i>
-                </div>
-                <small className="absolute right-3 bottom-2.5 text-[0.625rem] text-white [text-shadow:0_1px_4px_var(--color-ink)]">
-                    Imagem ilustrativa
-                </small>
-            </ImageBackdrop>
-
-            <div className="wrap -mt-12 pb-12 md:mt-0 md:flex md:min-h-144 md:items-center md:py-16 lg:min-h-160">
+            <div className="wrap pt-3 pb-9 md:flex md:min-h-144 md:items-center md:py-16 lg:min-h-160">
                 <div className="md:w-1/2 md:pr-8 lg:w-5/12">
                     <Eyebrow line>Um novo ritual de sabor</Eyebrow>
                     <h1 className="my-6 font-serif text-6xl leading-[1.05] tracking-tight lg:text-7xl">
@@ -50,6 +34,21 @@ export function Hero({ variant }: { variant: 'fade' | 'curve' }) {
                     </p>
                 </div>
             </div>
+
+            <ImageBackdrop
+                src={bombons}
+                alt="Tigela com bombons embrulhados em papel dourado e cartão “Feito com muito amor”"
+                side="right"
+                priority
+            >
+                <div className="absolute bottom-8 left-5 flex flex-col gap-1.5 rounded-sm bg-page/95 px-4 py-3 md:right-6 md:bottom-10 md:left-auto md:px-5 md:py-4 lg:right-12">
+                    <span className="text-xs tracking-widest">CEVADA + CHOCOLATE</span>
+                    <i className="font-serif text-lg">Um encontro cheio de sabor.</i>
+                </div>
+                <small className="absolute right-3 bottom-2.5 text-[0.625rem] text-white [text-shadow:0_1px_4px_var(--color-ink)]">
+                    Imagem ilustrativa
+                </small>
+            </ImageBackdrop>
         </section>
     );
 }
