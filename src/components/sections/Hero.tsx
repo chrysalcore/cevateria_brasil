@@ -1,4 +1,4 @@
-import cevadaChocolate from '../../assets/images/cevada-chocolate.webp';
+import bombons from '../../assets/images/bombons.webp';
 import { Button } from '../global/Button';
 import { Eyebrow } from '../global/Eyebrow';
 
@@ -34,10 +34,10 @@ export function Hero() {
 
             <div className="relative ml-3 h-104 rounded-t-arch rounded-b bg-clay md:ml-0 md:h-128 lg:h-144">
                 <img
-                    src={cevadaChocolate}
-                    alt="Composição ilustrativa com xícara de cevada com chocolate, cápsulas e espigas"
-                    width={928}
-                    height={1152}
+                    src={bombons}
+                    alt="Tigela com bombons embrulhados em papel dourado e cartão “Feito com muito amor”"
+                    width={960}
+                    height={1280}
                     fetchPriority="high"
                     className="size-full rounded-[inherit] object-cover"
                 />

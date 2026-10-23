@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import cevadaChocolate from '../../assets/images/cevada-chocolate.webp';
+import bombons from '../../assets/images/bombons.webp';
 import { products } from '../../data/products';
 import { formatPrice } from '../../helpers/formatPrice';
 import { useCart } from '../../hooks/useCart';
@@ -38,10 +38,10 @@ export function Products() {
             <div className="grid items-center gap-7 md:grid-cols-[1.05fr_1fr] md:gap-9 lg:gap-20">
                 <div className="relative h-88 overflow-hidden rounded bg-clay md:h-144">
                     <img
-                        src={cevadaChocolate}
-                        alt="Sugestão de apresentação de cevada com chocolate em cápsulas"
-                        width={928}
-                        height={1152}
+                        src={bombons}
+                        alt="Bombons embrulhados em papel dourado dentro de uma tigela de cerâmica"
+                        width={960}
+                        height={1280}
                         loading="lazy"
                         className="size-full object-cover"
                     />
