@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import bombons from '../../assets/images/bombons.webp';
 import { products } from '../../data/products';
 import { formatPrice } from '../../helpers/formatPrice';
 import { useCart } from '../../hooks/useCart';
@@ -9,12 +8,14 @@ import { Button } from '../global/Button';
 import { Eyebrow } from '../global/Eyebrow';
 import { QuantityControl } from '../global/QuantityControl';
 import { Toast } from '../global/Toast';
+import { ProductGallery } from './products/ProductGallery';
 import { ProductOptions } from './products/ProductOptions';
 
 export function Products() {
     const { addItem } = useCart();
     const { message, visible, showToast } = useToast();
     const [selected, setSelected] = useState<Product>(products[0]);
+    const [preview, setPreview] = useState<Product | null>(null);
     const [quantity, setQuantity] = useState(1);
 
     function handleAdd() {
@@ -36,22 +37,7 @@ export function Products() {
             </div>
 
             <div className="grid items-center gap-7 md:grid-cols-[1.05fr_1fr] md:gap-9 lg:gap-20">
-                <div className="relative h-88 overflow-hidden rounded bg-surface-strong md:h-144">
-                    <img
-                        src={bombons}
-                        alt="Bombons embrulhados em papel dourado dentro de uma tigela de cerâmica"
-                        width={960}
-                        height={1280}
-                        loading="lazy"
-                        className="size-full object-cover"
-                    />
-                    <span className="absolute top-5 left-5 rounded-sm bg-page/95 px-3 py-2 text-xs tracking-wider">
-                        CEVADA COM CHOCOLATE
-                    </span>
-                    <small className="absolute right-3 bottom-2.5 text-[0.625rem] text-white [text-shadow:0_1px_4px_var(--color-ink)]">
-                        Imagem ilustrativa · apresentação a confirmar
-                    </small>
-                </div>
+                <ProductGallery shown={preview ?? selected} />
 
                 <div>
                     <Eyebrow>Escolha sua pausa</Eyebrow>
@@ -63,7 +49,7 @@ export function Products() {
                         Da primeira cápsula ao seu kit favorito: escolha a quantidade que combina com você.
                     </p>
 
-                    <ProductOptions selected={selected} onSelect={setSelected} />
+                    <ProductOptions selected={selected} onSelect={setSelected} onPreview={setPreview} />
 
                     <div className="mt-5 mb-4 flex items-center justify-between">
                         <div>
