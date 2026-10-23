@@ -9,4 +9,4 @@ Reconstrucción en React del sitio estático https://cevadascomamor.netlify.app/
 - Tipografía en escala estándar de Tailwind con mínimo `text-xs` (el original usaba 8–11px). Excepción: `text-[0.5rem]`/`text-[0.625rem]` solo en logotipo, sello del hero y notas "Imagen ilustrativa".
 - Referencia de contenido: el sitio en vivo (un solo WhatsApp, sin InfinitePay), no el brief en PDF que lo originó (ya eliminado).
 - Deploy: GitHub Pages, no Netlify. `base: '/cevateria_brasil/'` en `vite.config.ts` (asume que el repo se llama así). Workflow `deploy.yml` copiado de `pokedex` (push a `main`: build + publica `dist` en `gh-pages`). Sin CI por ahora (decisión de Ordnay, 2026-10-23); se agrega junto con los tests, siguiendo el `ci.yml` de `pokedex`.
-- Pendiente: `og:image` todavía apunta a `https://cevadascomamor.netlify.app/og-image.jpg` (URL vieja); cambiarla a la URL absoluta de GitHub Pages.
+- `og:image` (960×504, recorte de una foto real del producto) con URL absoluta de GitHub Pages; si cambia el dominio, actualizarla.

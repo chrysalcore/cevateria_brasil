@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useCart } from '../../hooks/useCart';
-import { Wordmark } from '../global/Wordmark';
+import logo from '../../assets/images/logo.webp';
 
 const links = [
     { href: '#produtos', label: 'Nossas cápsulas' },
@@ -14,11 +14,8 @@ export function Header({ onOpenCart }: { onOpenCart: () => void }) {
 
     return (
         <header className="wrap relative flex h-20 items-center justify-between gap-4 md:h-28 md:gap-8">
-            <a href="#inicio" className="flex items-center gap-2" aria-label="Cevadas com Amor, início">
-                <svg viewBox="0 0 40 50" aria-hidden="true" className="h-10 w-7 md:h-12 md:w-9" strokeWidth="1.3">
-                    <path d="M20 46V6M20 15C8 15 7 7 9 4c9 1 11 6 11 11Zm0 8C32 23 33 15 31 12c-9 1-11 6-11 11Zm0 9C8 32 7 24 9 21c9 1 11 6 11 11Zm0 8c12 0 13-8 11-11-9 1-11 6-11 11Z" />
-                </svg>
-                <Wordmark />
+            <a href="#inicio" className="shrink-0">
+                <img src={logo} alt="Cevateria Brasil, início" width={189} height={192} className="size-16 md:size-22" />
             </a>
 
             <nav
