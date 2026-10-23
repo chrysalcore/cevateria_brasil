@@ -14,7 +14,7 @@ export function Footer() {
             <a href="#duvidas" className="text-xs transition hover:text-accent">
                 Dúvidas frequentes ↗
             </a>
-            <small className="text-right text-xs text-muted">© {new Date().getFullYear()} Cevadas com Amor</small>
+            <small className="text-right text-xs text-muted">© {new Date().getFullYear()} Cevateria Brasil</small>
         </footer>
     );
 }

@@ -1,6 +1,6 @@
-# Cevadas com Amor
+# Cevateria Brasil
 
-Landing page and order builder for Cevadas com Amor, a Brazilian brand of barley-with-chocolate capsules.
+Landing page and order builder for Cevateria Brasil, a Brazilian brand of barley-with-chocolate capsules.
 
 [![React](https://img.shields.io/badge/React_19.3.1-blue)](https://reactjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript_6.0-blue)](https://www.typescriptlang.org/)
@@ -15,7 +15,7 @@ Live Link: [https://chrysalcore.github.io/cevateria_brasil/](https://chrysalcore
 
 ## Description
 
-**Cevadas com Amor** is a single-page site for a small Brazilian business that sells barley-with-chocolate capsules, individually or in kits of 4, 6, 8 and 10.
+**Cevateria Brasil** is a single-page site for a small Brazilian business that sells barley-with-chocolate capsules, individually or in kits of 4, 6, 8 and 10.
 
 Visitors pick an option, set a quantity and build their order in a cart dialog. There is no payment gateway: checkout turns the order into a pre-filled WhatsApp message (items, subtotal, name and postal code), and availability, shipping and payment are confirmed in the conversation. The warm palette of cream, chocolate and wine, the Playfair Display + DM Sans pairing and the arched shapes aim for a calm, cozy feel that matches the brand's "small pauses" message.
 

@@ -12,7 +12,7 @@ export function getSubtotal(cart: CartItem[]) {
 
 export function buildOrderMessage(cart: CartItem[], name: string, cep: string) {
     return [
-        `Olá! ${name ? `Meu nome é ${name}. ` : ''}Gostaria de fazer um pedido na Cevadas com Amor.`,
+        `Olá! ${name ? `Meu nome é ${name}. ` : ''}Gostaria de fazer um pedido na Cevateria Brasil.`,
         '',
         'Cevada com chocolate em cápsulas:',
         ...cart.map((item) => `${item.quantity} × ${item.name} — ${formatPrice(item.quantity * item.cents)}`),
