@@ -12,7 +12,7 @@ export function TextLink({
     return (
         <a
             href={href}
-            className="mt-6 inline-flex items-center gap-4 border-b border-gold pb-2 text-sm transition hover:text-accent"
+            className="mt-6 inline-flex items-center gap-4 border-b border-highlight-soft pb-2 text-sm transition hover:text-highlight"
             {...(external && { target: '_blank', rel: 'noopener noreferrer' })}
         >
             {children}

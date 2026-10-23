@@ -36,7 +36,7 @@ export function Products() {
             </div>
 
             <div className="grid items-center gap-7 md:grid-cols-[1.05fr_1fr] md:gap-9 lg:gap-20">
-                <div className="relative h-88 overflow-hidden rounded bg-clay md:h-144">
+                <div className="relative h-88 overflow-hidden rounded bg-surface-strong md:h-144">
                     <img
                         src={bombons}
                         alt="Bombons embrulhados em papel dourado dentro de uma tigela de cerâmica"
@@ -45,7 +45,7 @@ export function Products() {
                         loading="lazy"
                         className="size-full object-cover"
                     />
-                    <span className="absolute top-5 left-5 rounded-sm bg-paper/95 px-3 py-2 text-xs tracking-wider">
+                    <span className="absolute top-5 left-5 rounded-sm bg-page/95 px-3 py-2 text-xs tracking-wider">
                         CEVADA COM CHOCOLATE
                     </span>
                     <small className="absolute right-3 bottom-2.5 text-[0.625rem] text-white [text-shadow:0_1px_4px_var(--color-ink)]">

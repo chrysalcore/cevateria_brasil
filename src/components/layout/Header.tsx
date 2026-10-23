@@ -21,10 +21,10 @@ export function Header({ onOpenCart }: { onOpenCart: () => void }) {
             <nav
                 id="navigation"
                 aria-label="Menu principal"
-                className={`${menuOpen ? 'flex' : 'hidden'} absolute inset-x-0 top-full z-10 flex-col gap-6 border border-line bg-paper p-6 text-sm shadow-lg md:static md:flex md:flex-row md:gap-5 md:border-0 md:bg-transparent md:p-0 md:shadow-none lg:gap-8`}
+                className={`${menuOpen ? 'flex' : 'hidden'} absolute inset-x-0 top-full z-10 flex-col gap-6 border border-divider bg-page p-6 text-sm shadow-lg md:static md:flex md:flex-row md:gap-5 md:border-0 md:bg-transparent md:p-0 md:shadow-none lg:gap-8`}
             >
                 {links.map(({ href, label }) => (
-                    <a key={href} href={href} className="transition hover:text-accent" onClick={() => setMenuOpen(false)}>
+                    <a key={href} href={href} className="transition hover:text-highlight" onClick={() => setMenuOpen(false)}>
                         {label}
                     </a>
                 ))}
@@ -32,7 +32,7 @@ export function Header({ onOpenCart }: { onOpenCart: () => void }) {
 
             <button
                 type="button"
-                className="ml-auto flex cursor-pointer items-center gap-2.5 rounded border border-edge px-3 py-2.5 text-sm transition hover:bg-sand md:ml-0 md:px-4 md:py-3"
+                className="ml-auto flex cursor-pointer items-center gap-2.5 rounded border border-control px-3 py-2.5 text-sm transition hover:bg-surface md:ml-0 md:px-4 md:py-3"
                 aria-label={`Abrir meu pedido, ${count} ${count === 1 ? 'item' : 'itens'}`}
                 onClick={onOpenCart}
             >
@@ -40,7 +40,7 @@ export function Header({ onOpenCart }: { onOpenCart: () => void }) {
                     <path d="M5 7h14l1 14H4L5 7Zm3 0V5a4 4 0 0 1 8 0v2" />
                 </svg>
                 <span className="hidden lg:inline">Meu pedido</span>
-                <b className="grid size-5 place-items-center rounded-full bg-ink text-xs font-medium text-paper">{count}</b>
+                <b className="grid size-5 place-items-center rounded-full bg-ink text-xs font-medium text-page">{count}</b>
             </button>
 
             <button

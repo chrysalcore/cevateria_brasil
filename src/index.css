@@ -2,19 +2,19 @@
 
 @theme static {
     --color-*: initial;
-    --color-paper: #fcf8ef;
-    --color-sand: #f0eade;
-    --color-blush: #f3e7df;
-    --color-clay: #e4d5c4;
-    --color-cream: #f4ead8;
-    --color-ink: #39271f;
-    --color-muted: #75655a;
-    --color-line: #e3dacb;
-    --color-edge: #cbbdad;
-    --color-gold: #ab9574;
-    --color-gold-light: #dcb899;
-    --color-accent: #7d3540;
-    --color-accent-dark: #612c35;
+    --color-page: #fcf8ef;
+    --color-surface: #f3eadb;
+    --color-surface-strong: #e8d2b0;
+    --color-selected: #efe3d2;
+    --color-ink: #190c04;
+    --color-muted: #6e5a49;
+    --color-on-dark: #e8d2b0;
+    --color-accent: #5c3719;
+    --color-accent-hover: #44280f;
+    --color-highlight: #966737;
+    --color-highlight-soft: #c2965e;
+    --color-divider: #e6dac6;
+    --color-control: #958067;
     --color-error: #9b2738;
     --color-white: #fff;
 
@@ -24,8 +24,8 @@
 
     --radius-arch: 10rem;
 
-    --shadow-dialog: 0 1.5rem 6rem rgb(57 39 31 / 0.2);
-    --shadow-toast: 0 0.25rem 1.25rem rgb(57 39 31 / 0.15);
+    --shadow-dialog: 0 1.5rem 6rem color-mix(in srgb, var(--color-ink) 20%, transparent);
+    --shadow-toast: 0 0.25rem 1.25rem color-mix(in srgb, var(--color-ink) 15%, transparent);
 }
 
 @layer base {
@@ -35,11 +35,11 @@
     }
 
     body {
-        @apply bg-paper font-sans text-ink antialiased;
+        @apply bg-page font-sans text-ink antialiased;
     }
 
     em {
-        @apply font-normal text-accent;
+        @apply font-normal text-highlight;
     }
 
     :focus-visible {
@@ -51,7 +51,7 @@
     }
 
     dialog::backdrop {
-        background: rgb(57 39 31 / 0.5);
+        background: color-mix(in srgb, var(--color-ink) 50%, transparent);
         backdrop-filter: blur(4px);
     }
 

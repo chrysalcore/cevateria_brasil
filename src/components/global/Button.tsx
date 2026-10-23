@@ -1,6 +1,6 @@
 const variants = {
-    primary: 'bg-accent text-paper hover:bg-accent-dark',
-    cream: 'bg-cream text-ink hover:bg-clay',
+    primary: 'bg-accent text-page hover:bg-accent-hover',
+    light: 'bg-on-dark text-ink hover:bg-surface',
 };
 
 export function Button({

@@ -7,7 +7,7 @@ export function CartItemRow({ item }: { item: CartItem }) {
     const { updateQuantity, removeItem } = useCart();
 
     return (
-        <li className="flex items-center justify-between gap-4 border-b border-line py-4">
+        <li className="flex items-center justify-between gap-4 border-b border-divider py-4">
             <div>
                 <h3 className="text-sm font-medium">{item.name}</h3>
                 <p className="mt-2 text-xs text-muted">
@@ -15,7 +15,7 @@ export function CartItemRow({ item }: { item: CartItem }) {
                 </p>
                 <button
                     type="button"
-                    className="mt-2 cursor-pointer border-b border-line text-xs text-muted transition hover:text-accent"
+                    className="mt-2 cursor-pointer border-b border-divider text-xs text-muted transition hover:text-highlight"
                     aria-label={`Remover ${item.name}`}
                     onClick={() => removeItem(item.id)}
                 >

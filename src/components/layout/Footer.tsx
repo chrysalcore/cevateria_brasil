@@ -11,7 +11,7 @@ export function Footer() {
                 <br />
                 Pequenas pausas, bons momentos.
             </p>
-            <a href="#duvidas" className="text-xs transition hover:text-accent">
+            <a href="#duvidas" className="text-xs transition hover:text-highlight">
                 Dúvidas frequentes ↗
             </a>
             <small className="text-right text-xs text-muted">© {new Date().getFullYear()} Cevateria Brasil</small>

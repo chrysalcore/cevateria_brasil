@@ -11,7 +11,7 @@ export function ProductOptions({ selected, onSelect }: { selected: Product; onSe
                     type="button"
                     aria-pressed={product.id === selected.id}
                     onClick={() => onSelect(product)}
-                    className="flex cursor-pointer items-center justify-between gap-3 rounded border border-line px-4 py-3.5 text-left text-sm transition hover:bg-sand aria-pressed:border-accent aria-pressed:bg-blush aria-pressed:shadow-[inset_3px_0_var(--color-accent)]"
+                    className="flex cursor-pointer items-center justify-between gap-3 rounded border border-control px-4 py-3.5 text-left text-sm transition hover:bg-surface aria-pressed:border-accent aria-pressed:bg-selected aria-pressed:shadow-[inset_3px_0_var(--color-accent)]"
                 >
                     <span>{product.name}</span>
                     <strong className="font-medium">{formatPrice(product.cents)}</strong>

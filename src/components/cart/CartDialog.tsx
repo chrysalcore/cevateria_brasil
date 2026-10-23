@@ -27,7 +27,7 @@ export function CartDialog({ open, onClose }: { open: boolean; onClose: () => vo
             aria-labelledby="cart-title"
             onClose={onClose}
             onClick={(event) => event.target === event.currentTarget && onClose()}
-            className="m-auto max-h-[90dvh] w-[min(32.5rem,calc(100%-1.75rem))] rounded-lg border border-line bg-paper text-ink shadow-dialog"
+            className="m-auto max-h-[90dvh] w-[min(32.5rem,calc(100%-1.75rem))] rounded-lg border border-divider bg-page text-ink shadow-dialog"
         >
             <div className="px-5 py-6 md:p-8">
                 <div className="flex items-center justify-between">

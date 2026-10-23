@@ -18,7 +18,7 @@ export function App() {
         <>
             <a
                 href="#conteudo"
-                className="fixed -top-24 left-2.5 z-30 bg-paper p-3 focus:top-2.5"
+                className="fixed -top-24 left-2.5 z-30 bg-page p-3 focus:top-2.5"
             >
                 Pular para o conteúdo
             </a>

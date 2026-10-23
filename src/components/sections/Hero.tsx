@@ -32,7 +32,7 @@ export function Hero() {
                 </p>
             </div>
 
-            <div className="relative ml-3 h-104 rounded-t-arch rounded-b bg-clay md:ml-0 md:h-128 lg:h-144">
+            <div className="relative ml-3 h-104 rounded-t-arch rounded-b bg-surface-strong md:ml-0 md:h-128 lg:h-144">
                 <img
                     src={bombons}
                     alt="Tigela com bombons embrulhados em papel dourado e cartão “Feito com muito amor”"
@@ -41,7 +41,7 @@ export function Hero() {
                     fetchPriority="high"
                     className="size-full rounded-[inherit] object-cover"
                 />
-                <div className="absolute top-6 -left-5 flex size-24 -rotate-12 flex-col items-center justify-center gap-1.5 rounded-full border-4 border-paper bg-cream md:-left-6 lg:top-7 lg:-left-10 lg:size-28">
+                <div className="absolute top-6 -left-5 flex size-24 -rotate-12 flex-col items-center justify-center gap-1.5 rounded-full border-4 border-page bg-on-dark md:-left-6 lg:top-7 lg:-left-10 lg:size-28">
                     <span aria-hidden="true" className="font-serif text-4xl leading-none">
                         ♡
                     </span>
@@ -50,7 +50,7 @@ export function Hero() {
                         <br />E BONS MOMENTOS
                     </small>
                 </div>
-                <div className="absolute bottom-8 left-5 flex flex-col gap-1.5 rounded-sm bg-paper/95 px-4 py-3 md:left-7 md:bottom-9 md:px-5 md:py-4">
+                <div className="absolute bottom-8 left-5 flex flex-col gap-1.5 rounded-sm bg-page/95 px-4 py-3 md:left-7 md:bottom-9 md:px-5 md:py-4">
                     <span className="text-xs tracking-widest">CEVADA + CHOCOLATE</span>
                     <i className="font-serif text-lg">Um encontro cheio de sabor.</i>
                 </div>

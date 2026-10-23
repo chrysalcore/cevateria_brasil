@@ -19,7 +19,7 @@ export function Faq() {
             </div>
             <div>
                 {faq.map(({ question, answer }) => (
-                    <details key={question} className="group border-b border-line">
+                    <details key={question} className="group border-b border-divider">
                         <summary className="flex cursor-pointer list-none items-center justify-between gap-4 py-5 text-sm leading-relaxed">
                             {question}
                             <span aria-hidden="true" className="text-xl text-muted transition group-open:rotate-45">
