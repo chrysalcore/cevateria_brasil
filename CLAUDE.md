@@ -12,3 +12,22 @@ Reconstrucción en React del sitio estático https://cevadascomamor.netlify.app/
 - Referencia de contenido: el sitio en vivo (un solo WhatsApp, sin InfinitePay), no el brief en PDF que lo originó (ya eliminado).
 - Deploy: GitHub Pages, no Netlify. `base: '/cevateria_brasil/'` en `vite.config.ts` (asume que el repo se llama así). Workflow `deploy.yml` copiado de `pokedex` (push a `main`: build + publica `dist` en `gh-pages`). Sin CI por ahora (decisión de Ordnay, 2026-10-23); se agrega junto con los tests, siguiendo el `ci.yml` de `pokedex`.
 - `og:image`: foto real del producto completa, sin recortar (960×1280, decisión de Ordnay), con URL absoluta de GitHub Pages; si cambia el dominio, actualizarla.
+
+## Pendientes (revisión del 2026-10-24, para hacer más adelante)
+
+- `CheckoutForm` (foco del CEP) y `CartDialog` (scroll a `#produtos`) usan `document.getElementById`: pasar a `useRef`.
+- `getSubtotal` vive en `helpers/whatsapp.ts` pero es lógica del carrito: exponer `subtotal` derivado desde `CartProvider`, junto a `count`.
+- El carrito no persiste: al volver de WhatsApp en mobile la pestaña suele recargarse y se pierde. Inicializar el reducer desde `localStorage` (tercer argumento de `useReducer`) y guardar en un `useEffect`.
+- Tests + CI siguiendo `pokedex-app`: reducer, `buildOrderMessage`, flujo agregar → abrir pedido → validar CEP.
+- Prettier con `prettier-plugin-tailwindcss` (listado en `.prettierrc`) y orden de imports consistente (hoy `useReveal` aparece antes o después de `global/` según el archivo).
+- `className` largos: el subrayado animado del nav en `Header` (10 clases `after:`) pasarlo a una `@utility`.
+- El arco de `Essence` repite a mano el marcado de `global/ArchImage` con otras medidas y un marco interior: unificar.
+- `values` está inline en `Values.tsx` mientras `steps`/`faq` viven en `data/`: elegir un criterio.
+
+Visuales (comparación con `chrysal-core`, `sofi-nails` y `molino_rojo`, 2026-10-24; pautas en el `CLAUDE.md` global, sección "Diseño visual"):
+
+- Cuerpo de texto casi todo en `text-sm`/`text-xs` + `muted`: subir párrafos a `text-base` (al menos desde `md:`).
+- `Values` usa caracteres Unicode como íconos (`⌁ ◌ ♡ ↗`): reemplazar por un set SVG de línea con el mismo trazo que la taza del hero (`strokeWidth="1.3"`).
+- Transiciones entre bandas de color son rectángulos planos: probar una curva o arco invertido coherente con la forma de marca.
+- Sin prueba social: sección de testimonios o reseñas cuando el cliente tenga material.
+- Algo apagado en el primer vistazo: revisar fuerza del CTA y de las fotos del hero.
