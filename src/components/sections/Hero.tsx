@@ -1,4 +1,4 @@
-import bombons from '../../assets/images/bombons.webp';
+import ritual from '../../assets/images/ritual.webp';
 import { Button } from '../global/Button';
 import { Eyebrow } from '../global/Eyebrow';
 import { ImageBackdrop } from '../global/ImageBackdrop';
@@ -36,8 +36,10 @@ export function Hero() {
             </div>
 
             <ImageBackdrop
-                src={bombons}
-                alt="Tigela com bombons embrulhados em papel dourado e cartão “Feito com muito amor”"
+                src={ritual}
+                alt="Xícara de bebida quente sobre a mesa de madeira, ao lado de uma tigela com cápsulas douradas"
+                width={896}
+                height={1200}
                 side="right"
                 priority
             >

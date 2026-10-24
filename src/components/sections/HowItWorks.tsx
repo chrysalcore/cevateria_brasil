@@ -1,11 +1,11 @@
-import bombons from '../../assets/images/bombons.webp';
+import pedido from '../../assets/images/pedido.webp';
 import { steps } from '../../data/steps';
 import { Eyebrow } from '../global/Eyebrow';
 import { ImageBackdrop } from '../global/ImageBackdrop';
 
 export function HowItWorks() {
     return (
-        <section className="relative isolate overflow-hidden">
+        <section className="relative isolate overflow-hidden my-16 md:my-20">
             <div className="wrap py-12 md:flex md:min-h-128 md:items-center md:justify-end md:py-20">
                 <div className="md:w-1/2 md:pl-8 lg:w-5/12">
                     <Eyebrow>Do seu jeito, sem complicação</Eyebrow>
@@ -32,9 +32,12 @@ export function HowItWorks() {
                 </div>
             </div>
             <ImageBackdrop
-                src={bombons}
-                alt="Bombons embrulhados em papel dourado dentro de uma tigela de cerâmica"
+                src={pedido}
+                alt="Mãos segurando um celular ao lado de uma caixa de presente e cápsulas douradas"
+                width={1024}
+                height={1024}
                 side="left"
+                span="narrow"
             />
         </section>
     );

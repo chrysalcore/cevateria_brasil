@@ -1,4 +1,4 @@
-import bombons from '../../assets/images/bombons.webp';
+import leitura from '../../assets/images/leitura.webp';
 import { Eyebrow } from '../global/Eyebrow';
 import { TextLink } from '../global/TextLink';
 
@@ -8,10 +8,10 @@ export function Essence() {
             <div className="wrap grid items-center gap-8 md:grid-cols-[0.9fr_1.1fr] md:gap-10 lg:gap-24">
                 <div className="relative mx-auto h-96 w-full max-w-xs rounded-t-arch bg-surface-strong md:h-120 md:max-w-sm">
                     <img
-                        src={bombons}
-                        alt="Bombons embrulhados em papel dourado dentro de uma tigela de cerâmica"
-                        width={960}
-                        height={1280}
+                        src={leitura}
+                        alt="Pessoa lendo um livro junto à janela, com uma xícara quente e duas cápsulas ao lado"
+                        width={896}
+                        height={1200}
                         loading="lazy"
                         className="size-full rounded-[inherit] object-cover"
                     />
