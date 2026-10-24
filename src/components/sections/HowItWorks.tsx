@@ -1,13 +1,19 @@
 import pedido from '../../assets/images/pedido.webp';
 import { steps } from '../../data/steps';
+import { ArchImage } from '../global/ArchImage';
 import { Eyebrow } from '../global/Eyebrow';
-import { ImageBackdrop } from '../global/ImageBackdrop';
+import { useReveal } from '../../hooks/useReveal';
 
 export function HowItWorks() {
+    const revealRef = useReveal<HTMLDivElement>();
+
     return (
-        <section className="relative isolate overflow-hidden my-16 md:my-20">
-            <div className="wrap py-12 md:flex md:min-h-128 md:items-center md:justify-end md:py-20">
-                <div className="md:w-1/2 md:pl-8 lg:w-5/12">
+        <section id="como-funciona" className="bg-surface">
+            <div
+                ref={revealRef}
+                className="wrap grid items-center gap-8 py-12 *:reveal md:grid-cols-2 md:gap-10 md:py-20 lg:gap-20"
+            >
+                <div>
                     <Eyebrow>Do seu jeito, sem complicação</Eyebrow>
                     <h2 className="mt-4 mb-8 font-serif text-4xl leading-tight tracking-tight">
                         Seu pedido começa
@@ -30,15 +36,14 @@ export function HowItWorks() {
                         ))}
                     </ol>
                 </div>
+                <ArchImage
+                    src={pedido}
+                    alt="Mãos segurando um celular ao lado de uma caixa de presente e cápsulas douradas"
+                    width={1024}
+                    height={1024}
+                    className="md:order-first"
+                />
             </div>
-            <ImageBackdrop
-                src={pedido}
-                alt="Mãos segurando um celular ao lado de uma caixa de presente e cápsulas douradas"
-                width={1024}
-                height={1024}
-                side="left"
-                span="narrow"
-            />
         </section>
     );
 }

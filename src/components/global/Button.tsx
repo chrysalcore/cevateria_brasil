@@ -18,7 +18,7 @@ export function Button({
     wide?: boolean;
     onClick?: React.MouseEventHandler<HTMLAnchorElement & HTMLButtonElement>;
 }) {
-    const className = `inline-flex min-h-12 cursor-pointer items-center justify-center gap-5 rounded px-6 py-4 text-sm font-medium transition motion-safe:hover:-translate-y-0.5 ${variants[variant]} ${wide ? 'w-full' : ''}`;
+    const className = `inline-flex min-h-12 cursor-pointer items-center justify-center gap-5 rounded px-6 py-4 text-sm font-medium transition motion-safe:hover:-translate-y-0.5 motion-safe:active:scale-95 ${variants[variant]} ${wide ? 'w-full' : ''}`;
     const content = (
         <>
             {children}

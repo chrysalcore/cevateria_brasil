@@ -5,6 +5,7 @@ import logo from '../../assets/images/logo.webp';
 const links = [
     { href: '#produtos', label: 'Nossas cápsulas' },
     { href: '#essencia', label: 'Nossa essência' },
+    { href: '#como-funciona', label: 'Como funciona' },
     { href: '#duvidas', label: 'Dúvidas frequentes' },
 ];
 
@@ -24,7 +25,9 @@ export function Header({ onOpenCart }: { onOpenCart: () => void }) {
                 className={`${menuOpen ? 'flex' : 'hidden'} absolute inset-x-0 top-full z-10 flex-col gap-6 border border-divider bg-page p-6 text-sm shadow-lg md:static md:flex md:flex-row md:gap-5 md:border-0 md:bg-transparent md:p-0 md:shadow-none lg:gap-8`}
             >
                 {links.map(({ href, label }) => (
-                    <a key={href} href={href} className="transition hover:text-highlight" onClick={() => setMenuOpen(false)}>
+                    <a key={href} href={href} className="relative w-fit transition after:absolute after:inset-x-0 after:-bottom-1 after:h-px after:origin-left after:scale-x-0 after:bg-highlight after:transition-transform after:duration-300 after:ease-smooth hover:text-highlight hover:after:scale-x-100"
+                        onClick={() => setMenuOpen(false)}
+                    >
                         {label}
                     </a>
                 ))}
@@ -40,7 +43,7 @@ export function Header({ onOpenCart }: { onOpenCart: () => void }) {
                     <path d="M5 7h14l1 14H4L5 7Zm3 0V5a4 4 0 0 1 8 0v2" />
                 </svg>
                 <span className="hidden lg:inline">Meu pedido</span>
-                <b className="grid size-5 place-items-center rounded-full bg-ink text-xs font-medium text-page">{count}</b>
+                <b key={count} className="grid size-5 motion-safe:animate-bump place-items-center rounded-full bg-ink text-xs font-medium text-page">{count}</b>
             </button>
 
             <button

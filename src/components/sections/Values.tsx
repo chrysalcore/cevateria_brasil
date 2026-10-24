@@ -1,4 +1,5 @@
 import { Fragment } from 'react';
+import { useReveal } from '../../hooks/useReveal';
 
 const values = [
     { icon: '⌁', label: 'Cevada e chocolate' },
@@ -8,9 +9,14 @@ const values = [
 ];
 
 export function Values() {
+    const revealRef = useReveal<HTMLUListElement>();
+
     return (
         <div className="border-y border-divider bg-surface">
-            <ul className="wrap grid grid-cols-2 gap-x-3 gap-y-5 py-6 text-xs md:flex md:items-center md:justify-between md:gap-4 lg:text-sm">
+            <ul
+                ref={revealRef}
+                className="wrap grid grid-cols-2 gap-x-3 gap-y-5 py-6 text-xs *:reveal md:flex md:items-center md:justify-between md:gap-4 lg:text-sm"
+            >
                 {values.map(({ icon, label }, index) => (
                     <Fragment key={label}>
                         {index > 0 && (

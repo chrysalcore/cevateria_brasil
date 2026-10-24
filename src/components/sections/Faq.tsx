@@ -3,10 +3,17 @@ import { faq } from '../../data/faq';
 import { whatsappUrl } from '../../helpers/whatsapp';
 import { Eyebrow } from '../global/Eyebrow';
 import { TextLink } from '../global/TextLink';
+import { useReveal } from '../../hooks/useReveal';
 
 export function Faq() {
+    const revealRef = useReveal<HTMLElement>();
+
     return (
-        <section id="duvidas" className="wrap grid gap-6 py-12 md:grid-cols-[1fr_1.35fr] md:gap-10 md:py-20 lg:gap-16">
+        <section
+            ref={revealRef}
+            id="duvidas"
+            className="wrap grid gap-6 py-12 *:reveal md:grid-cols-[1fr_1.35fr] md:gap-10 md:py-20 lg:gap-16"
+        >
             <div>
                 <Eyebrow>Podemos ajudar?</Eyebrow>
                 <h2 className="mt-4 font-serif text-4xl leading-tight tracking-tight">
