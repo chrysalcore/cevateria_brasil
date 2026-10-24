@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useCart } from '../../hooks/useCart';
 import logo from '../../assets/images/logo.webp';
+import { Icon } from '../global/Icon';
 
 const links = [
     { href: '#produtos', label: 'Nossas cápsulas' },
@@ -39,22 +40,20 @@ export function Header({ onOpenCart }: { onOpenCart: () => void }) {
                 aria-label={`Abrir meu pedido, ${count} ${count === 1 ? 'item' : 'itens'}`}
                 onClick={onOpenCart}
             >
-                <svg viewBox="0 0 24 24" aria-hidden="true" className="size-5" strokeWidth="1.3">
-                    <path d="M5 7h14l1 14H4L5 7Zm3 0V5a4 4 0 0 1 8 0v2" />
-                </svg>
+                <Icon name="bag" />
                 <span className="hidden lg:inline">Meu pedido</span>
                 <b key={count} className="grid size-5 motion-safe:animate-bump place-items-center rounded-full bg-ink text-xs font-medium text-page">{count}</b>
             </button>
 
             <button
                 type="button"
-                className="size-11 cursor-pointer text-2xl md:hidden"
+                className="grid size-11 cursor-pointer place-items-center md:hidden"
                 aria-label={menuOpen ? 'Fechar menu' : 'Abrir menu'}
                 aria-controls="navigation"
                 aria-expanded={menuOpen}
                 onClick={() => setMenuOpen((open) => !open)}
             >
-                ☰
+                <Icon name={menuOpen ? 'close' : 'menu'} className="size-6" />
             </button>
         </header>
     );

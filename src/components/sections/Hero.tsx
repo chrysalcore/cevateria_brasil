@@ -2,6 +2,7 @@ import ritual from '../../assets/images/ritual.webp';
 import { Button } from '../global/Button';
 import { ArchImage } from '../global/ArchImage';
 import { Eyebrow } from '../global/Eyebrow';
+import { Icon } from '../global/Icon';
 
 export function Hero() {
     return (
@@ -21,7 +22,7 @@ export function Hero() {
                         <br className="hidden md:inline" /> chocolate.
                     </em>
                 </h1>
-                <p className="max-w-sm animate-enter text-sm leading-loose text-muted enter-delay-150">
+                <p className="max-w-md animate-enter text-base leading-relaxed text-muted enter-delay-150">
                     O encontro do sabor da cevada com o carinho do chocolate. Em cápsulas, para fazer dos pequenos
                     momentos a melhor parte do dia.
                 </p>
@@ -29,9 +30,7 @@ export function Hero() {
                     <Button href="#produtos">Encontre sua próxima pausa</Button>
                 </div>
                 <p className="mt-5 flex animate-enter items-center gap-2 text-xs text-muted enter-delay-450">
-                    <svg viewBox="0 0 24 24" aria-hidden="true" className="size-4" strokeWidth="1.3">
-                        <path d="M4 8h13v7a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V8Zm13 1h2a3 3 0 0 1 0 6h-2M7 3v2m5-2v2M2 23h19" />
-                    </svg>
+                    <Icon name="cup" className="size-4" />
                     Sabor que acolhe. Praticidade que acompanha.
                 </p>
             </div>

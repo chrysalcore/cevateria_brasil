@@ -2,16 +2,18 @@ import pedido from '../../assets/images/pedido.webp';
 import { steps } from '../../data/steps';
 import { ArchImage } from '../global/ArchImage';
 import { Eyebrow } from '../global/Eyebrow';
+import { WaveDivider } from '../global/WaveDivider';
 import { useReveal } from '../../hooks/useReveal';
 
 export function HowItWorks() {
     const revealRef = useReveal<HTMLDivElement>();
 
     return (
-        <section id="como-funciona" className="bg-surface">
+        <section id="como-funciona" className="relative bg-surface">
+            <WaveDivider className="text-surface" />
             <div
                 ref={revealRef}
-                className="wrap grid items-center gap-8 py-12 *:reveal md:grid-cols-2 md:gap-10 md:py-20 lg:gap-20"
+                className="wrap grid items-center gap-8 pt-20 pb-16 *:reveal md:grid-cols-2 md:gap-10 md:pt-28 md:pb-24 lg:gap-20"
             >
                 <div>
                     <Eyebrow>Do seu jeito, sem complicação</Eyebrow>
@@ -29,8 +31,8 @@ export function HowItWorks() {
                                     {String(index + 1).padStart(2, '0')}
                                 </span>
                                 <div>
-                                    <h3 className="text-sm font-medium">{title}</h3>
-                                    <p className="mt-2 text-sm leading-relaxed text-muted">{description}</p>
+                                    <h3 className="font-medium">{title}</h3>
+                                    <p className="mt-1 leading-relaxed text-muted">{description}</p>
                                 </div>
                             </li>
                         ))}

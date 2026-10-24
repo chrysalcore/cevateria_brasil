@@ -41,7 +41,7 @@ export function CheckoutForm() {
                 placeholder="Como podemos chamar você?"
                 value={name}
                 onChange={(event) => setName(event.target.value)}
-                className="w-full rounded border border-control bg-transparent p-3 text-sm"
+                className="w-full rounded border border-control bg-transparent p-3 text-base"
             />
 
             <label htmlFor="customer-cep" className="mt-5 mb-2 block text-sm">
@@ -61,7 +61,7 @@ export function CheckoutForm() {
                     setCep(event.target.value);
                     setCepError('');
                 }}
-                className="w-full rounded border border-control bg-transparent p-3 text-sm aria-invalid:border-error"
+                className="w-full rounded border border-control bg-transparent p-3 text-base aria-invalid:border-error"
             />
             <p id="cep-error" role="alert" className="mt-2 text-sm text-error empty:hidden">
                 {cepError}

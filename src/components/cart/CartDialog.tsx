@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { useCart } from '../../hooks/useCart';
 import { Eyebrow } from '../global/Eyebrow';
+import { Icon } from '../global/Icon';
 import { CartItemRow } from './CartItemRow';
 import { CheckoutForm } from './CheckoutForm';
 import { EmptyCart } from './EmptyCart';
@@ -34,11 +35,11 @@ export function CartDialog({ open, onClose }: { open: boolean; onClose: () => vo
                     <Eyebrow>Sua próxima pausa</Eyebrow>
                     <button
                         type="button"
-                        className="size-11 cursor-pointer text-3xl"
+                        className="grid size-11 cursor-pointer place-items-center"
                         aria-label="Fechar meu pedido"
                         onClick={onClose}
                     >
-                        ×
+                        <Icon name="close" className="size-6" />
                     </button>
                 </div>
                 <h2 id="cart-title" className="mt-3 mb-6 font-serif text-3xl tracking-tight md:text-4xl">

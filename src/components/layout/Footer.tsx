@@ -1,19 +1,23 @@
 import logo from '../../assets/images/logo.webp';
+import { Icon } from '../global/Icon';
+import { WaveDivider } from '../global/WaveDivider';
 
 export function Footer() {
     return (
-        <footer className="bg-surface">
-            <div className="wrap grid grid-cols-2 items-center gap-x-2.5 gap-y-6 py-9 md:flex md:flex-wrap md:justify-between md:gap-8 md:py-12">
+        <footer className="relative bg-surface">
+            <WaveDivider className="text-surface" />
+            <div className="wrap grid grid-cols-2 items-center gap-x-2.5 gap-y-6 pt-14 pb-10 md:flex md:flex-wrap md:justify-between md:gap-8 md:pt-20 md:pb-14">
                 <a href="#inicio">
                     <img src={logo} alt="Cevateria Brasil, início" width={189} height={192} loading="lazy" className="size-16" />
                 </a>
-                <p className="text-xs leading-relaxed text-muted">
+                <p className="text-sm leading-relaxed text-muted">
                     Cápsulas de cevada com chocolate.
                     <br />
                     Pequenas pausas, bons momentos.
                 </p>
-                <a href="#duvidas" className="text-xs transition hover:text-highlight">
-                    Dúvidas frequentes ↗
+                <a href="#duvidas" className="inline-flex items-center gap-1.5 text-sm transition hover:text-highlight">
+                    Dúvidas frequentes
+                    <Icon name="arrow-up-right" className="size-4" />
                 </a>
                 <small className="text-right text-xs text-muted">© {new Date().getFullYear()} Cevateria Brasil</small>
             </div>

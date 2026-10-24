@@ -1,3 +1,5 @@
+import { Icon } from './Icon';
+
 const variants = {
     default: 'hover:text-highlight',
     light: 'hover:text-page',
@@ -7,13 +9,11 @@ export function TextLink({
     children,
     href,
     external = false,
-    arrow = '→',
     variant = 'default',
 }: {
     children: React.ReactNode;
     href: string;
     external?: boolean;
-    arrow?: string;
     variant?: keyof typeof variants;
 }) {
     return (
@@ -23,9 +23,7 @@ export function TextLink({
             {...(external && { target: '_blank', rel: 'noopener noreferrer' })}
         >
             {children}
-            <span aria-hidden="true" className="text-xl leading-none">
-                {arrow}
-            </span>
+            <Icon name={external ? 'arrow-up-right' : 'arrow-right'} className="size-4" />
         </a>
     );
 }

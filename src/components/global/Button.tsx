@@ -1,3 +1,5 @@
+import { Icon } from './Icon';
+
 const variants = {
     primary: 'bg-accent text-page hover:bg-accent-hover',
     light: 'bg-on-dark text-ink hover:bg-surface',
@@ -22,9 +24,7 @@ export function Button({
     const content = (
         <>
             {children}
-            <span aria-hidden="true" className="text-xl leading-none">
-                ↗
-            </span>
+            <Icon name="arrow-up-right" className="size-4" />
         </>
     );
 

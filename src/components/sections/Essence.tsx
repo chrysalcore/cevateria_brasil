@@ -1,13 +1,15 @@
 import leitura from '../../assets/images/leitura.webp';
 import { Eyebrow } from '../global/Eyebrow';
 import { TextLink } from '../global/TextLink';
+import { WaveDivider } from '../global/WaveDivider';
 import { useReveal } from '../../hooks/useReveal';
 
 export function Essence() {
     const revealRef = useReveal<HTMLDivElement>();
 
     return (
-        <section id="essencia" className="band-dark py-12 md:py-18">
+        <section id="essencia" className="band-dark relative pt-20 pb-30 md:pt-28 md:pb-46">
+            <WaveDivider className="text-accent" />
             <div ref={revealRef} className="wrap grid items-center gap-8 md:grid-cols-[0.9fr_1.1fr] md:gap-10 lg:gap-24 *:reveal">
                 <div className="relative mx-auto h-96 w-full max-w-xs rounded-t-arch bg-surface-strong md:h-120 md:max-w-sm">
                     <img
@@ -31,11 +33,11 @@ export function Essence() {
                         A vida acontece
                         <br className="hidden md:inline" /> entre <em>uma pausa e outra.</em>
                     </h2>
-                    <p className="mt-3 max-w-md text-sm leading-loose text-on-dark/80">
+                    <p className="mt-4 max-w-md leading-relaxed text-on-dark/80">
                         A primeira conversa da manhã. A companhia de um bom livro. Aquele respiro no meio da tarde.
                         Acreditamos que os momentos simples merecem um sabor especial.
                     </p>
-                    <p className="mt-3 max-w-md text-sm leading-loose text-on-dark/80">
+                    <p className="mt-4 max-w-md leading-relaxed text-on-dark/80">
                         É por isso que cevada e chocolate se encontram por aqui: para convidar você a desacelerar e
                         saborear o agora.
                     </p>

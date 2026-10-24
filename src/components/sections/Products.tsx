@@ -27,13 +27,13 @@ export function Products() {
 
     return (
         <>
-            <section ref={revealRef} id="produtos" className="wrap py-14 *:reveal md:py-20">
+            <section ref={revealRef} id="produtos" className="wrap pt-14 pb-24 *:reveal md:pt-20 md:pb-38">
                 <div className="mb-7 md:mb-9 md:flex md:items-end md:justify-between">
                     <div>
                         <Eyebrow>Pequena cápsula, grande momento</Eyebrow>
                         <h2 className="mt-3 font-serif text-4xl leading-tight tracking-tight">Seu próximo sabor favorito.</h2>
                     </div>
-                    <p className="mt-4 text-sm leading-relaxed text-muted md:mt-0">
+                    <p className="mt-4 leading-relaxed text-muted md:mt-0">
                         Uma para experimentar.
                         <br className="hidden md:inline" /> Um kit para se apaixonar.
                     </p>
@@ -48,7 +48,7 @@ export function Products() {
                             Um carinho.
                             <br className="hidden md:inline" /> <em>Vários momentos.</em>
                         </h3>
-                        <p className="mt-4 text-sm leading-relaxed text-muted md:max-w-sm">
+                        <p className="mt-4 leading-relaxed text-muted md:max-w-md">
                             Da primeira cápsula ao seu kit favorito: escolha a quantidade que combina com você.
                         </p>
 
