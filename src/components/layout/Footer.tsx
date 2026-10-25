@@ -19,7 +19,19 @@ export function Footer() {
                     Dúvidas frequentes
                     <Icon name="arrow-up-right" className="size-4" />
                 </a>
-                <small className="text-right text-xs text-muted">© {new Date().getFullYear()} Cevateria Brasil</small>
+                <small className="text-right text-xs leading-relaxed text-muted">
+                    © {new Date().getFullYear()} Cevateria Brasil. Todos os direitos reservados.
+                    <br />
+                    Desenvolvido por{' '}
+                    <a
+                        href="https://chrysalcore.com"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="text-ink underline underline-offset-2 transition hover:text-highlight"
+                    >
+                        Chrysal Core
+                    </a>
+                </small>
             </div>
         </footer>
     );
