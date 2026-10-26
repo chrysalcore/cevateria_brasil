@@ -5,6 +5,7 @@ import type { CartItem, Product } from '../types';
 export type CartContextValue = {
     cart: CartItem[];
     count: number;
+    subtotal: number;
     addItem: (product: Product, quantity: number) => void;
     updateQuantity: (id: number, quantity: number) => void;
     removeItem: (id: number) => void;

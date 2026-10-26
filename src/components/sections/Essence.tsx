@@ -1,5 +1,6 @@
 import leitura from '../../assets/images/leitura.webp';
 import { useReveal } from '../../hooks/useReveal';
+import { ArchImage } from '../global/ArchImage';
 import { Eyebrow } from '../global/Eyebrow';
 import { TextLink } from '../global/TextLink';
 import { WaveDivider } from '../global/WaveDivider';
@@ -14,15 +15,13 @@ export function Essence() {
                 ref={revealRef}
                 className="wrap grid items-center gap-8 *:reveal md:grid-cols-[0.9fr_1.1fr] md:gap-10 lg:gap-24"
             >
-                <div className="relative mx-auto h-96 w-full max-w-xs rounded-t-arch bg-surface-strong md:h-120 md:max-w-sm">
-                    <img
-                        src={leitura}
-                        alt="Pessoa lendo um livro junto à janela, com uma xícara quente e duas cápsulas ao lado"
-                        width={896}
-                        height={1200}
-                        loading="lazy"
-                        className="size-full rounded-[inherit] object-cover"
-                    />
+                <ArchImage
+                    src={leitura}
+                    alt="Pessoa lendo um livro junto à janela, com uma xícara quente e duas cápsulas ao lado"
+                    width={896}
+                    height={1200}
+                    size="compact"
+                >
                     <span
                         aria-hidden="true"
                         className="pointer-events-none absolute inset-3 rounded-[inherit] border border-on-dark/70"
@@ -32,7 +31,7 @@ export function Essence() {
                         <br />
                         uma dose de carinho.
                     </i>
-                </div>
+                </ArchImage>
                 <div>
                     <Eyebrow>Nossa essência</Eyebrow>
                     <h2 className="mt-4 mb-6 font-serif text-4xl leading-tight tracking-tight">

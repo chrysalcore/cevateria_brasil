@@ -1,8 +1,16 @@
 import ritual from '../../assets/images/ritual.webp';
+import { QUESTION_MESSAGE } from '../../data/contact';
+import { products } from '../../data/products';
+import { formatPrice } from '../../helpers/formatPrice';
+import { whatsappUrl } from '../../helpers/whatsapp';
 import { ArchImage } from '../global/ArchImage';
 import { Button } from '../global/Button';
 import { Eyebrow } from '../global/Eyebrow';
 import { Icon } from '../global/Icon';
+
+const bestValue = products.reduce((best, product) =>
+    product.cents / product.capsules < best.cents / best.capsules ? product : best,
+);
 
 export function Hero() {
     return (
@@ -12,7 +20,7 @@ export function Hero() {
         >
             <div>
                 <Eyebrow line>Um novo ritual de sabor</Eyebrow>
-                <h1 className="my-6 animate-enter font-serif text-6xl leading-[1.05] tracking-tight lg:text-7xl">
+                <h1 className="my-5 animate-enter font-serif text-5xl leading-[1.05] tracking-tight md:my-6 md:text-6xl lg:text-7xl">
                     Uma pausa.
                     <br />
                     Um abraço.
@@ -26,12 +34,21 @@ export function Hero() {
                     O encontro do sabor da cevada com o carinho do chocolate. Em cápsulas, para fazer dos pequenos
                     momentos a melhor parte do dia.
                 </p>
-                <div className="mt-6 animate-enter enter-delay-300 md:mt-8">
+                <div className="mt-6 grid animate-enter gap-3 enter-delay-300 sm:flex sm:flex-wrap md:mt-8">
                     <Button href="#produtos">Encontre sua próxima pausa</Button>
+                    <Button href={whatsappUrl(QUESTION_MESSAGE)} external variant="outline">
+                        Falar no WhatsApp
+                    </Button>
                 </div>
-                <p className="mt-5 flex animate-enter items-center gap-2 text-xs text-muted enter-delay-450">
+                <p className="mt-5 flex animate-enter items-center gap-2 text-sm text-muted enter-delay-450">
                     <Icon name="cup" className="size-4" />
-                    Sabor que acolhe. Praticidade que acompanha.
+                    <span>
+                        A partir de{' '}
+                        <strong className="font-medium text-ink">
+                            {formatPrice(Math.round(bestValue.cents / bestValue.capsules))}
+                        </strong>{' '}
+                        por cápsula no {bestValue.name.toLowerCase()}
+                    </span>
                 </p>
             </div>
 

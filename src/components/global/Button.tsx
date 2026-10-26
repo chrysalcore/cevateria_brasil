@@ -3,6 +3,7 @@ import { Icon } from './Icon';
 const variants = {
     primary: 'bg-accent text-page hover:bg-accent-hover',
     light: 'bg-on-dark text-ink hover:bg-surface',
+    outline: 'border border-control text-ink hover:bg-surface',
 };
 
 export function Button({

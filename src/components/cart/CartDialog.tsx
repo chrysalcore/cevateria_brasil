@@ -18,11 +18,6 @@ export function CartDialog({ open, onClose }: { open: boolean; onClose: () => vo
         if (!open && dialog.open) dialog.close();
     }, [open]);
 
-    function handleExplore() {
-        onClose();
-        document.getElementById('produtos')?.scrollIntoView({ behavior: 'smooth' });
-    }
-
     return (
         <dialog
             ref={dialogRef}
@@ -47,7 +42,7 @@ export function CartDialog({ open, onClose }: { open: boolean; onClose: () => vo
                     Meu pedido
                 </h2>
                 {cart.length === 0 ? (
-                    <EmptyCart onExplore={handleExplore} />
+                    <EmptyCart onExplore={onClose} />
                 ) : (
                     <>
                         <ul>

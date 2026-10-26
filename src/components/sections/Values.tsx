@@ -1,14 +1,8 @@
 import { Fragment } from 'react';
 
+import { values } from '../../data/values';
 import { useReveal } from '../../hooks/useReveal';
 import { Icon } from '../global/Icon';
-
-const values = [
-    { icon: 'wheat', label: 'Cevada e chocolate' },
-    { icon: 'capsule', label: 'Seu ritual em cápsulas' },
-    { icon: 'heart', label: 'Mais sabor para sua pausa' },
-    { icon: 'chat', label: 'Pedidos pelo WhatsApp' },
-] as const;
 
 export function Values() {
     const revealRef = useReveal<HTMLUListElement>();

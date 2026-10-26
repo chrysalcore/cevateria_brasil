@@ -1,13 +1,14 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 
 import { formatPrice } from '../../helpers/formatPrice';
-import { buildOrderMessage, getSubtotal, whatsappUrl } from '../../helpers/whatsapp';
+import { buildOrderMessage, whatsappUrl } from '../../helpers/whatsapp';
 import { useCart } from '../../hooks/useCart';
 import { cepSchema } from '../../schemas/cepSchema';
 import { Button } from '../global/Button';
 
 export function CheckoutForm() {
-    const { cart } = useCart();
+    const { cart, subtotal } = useCart();
+    const cepRef = useRef<HTMLInputElement>(null);
     const [name, setName] = useState('');
     const [cep, setCep] = useState('');
     const [cepError, setCepError] = useState('');
@@ -17,7 +18,7 @@ export function CheckoutForm() {
         if (!result.success) {
             event.preventDefault();
             setCepError(result.error.issues[0].message);
-            document.getElementById('customer-cep')?.focus();
+            cepRef.current?.focus();
         }
     }
 
@@ -27,7 +28,7 @@ export function CheckoutForm() {
         <div>
             <div className="mt-6 flex items-center justify-between text-sm">
                 <span>Subtotal</span>
-                <strong className="font-serif text-2xl font-normal">{formatPrice(getSubtotal(cart))}</strong>
+                <strong className="font-serif text-2xl font-normal">{formatPrice(subtotal)}</strong>
             </div>
             <p className="mt-1 text-xs text-muted">Frete a combinar pelo WhatsApp.</p>
 
@@ -49,6 +50,7 @@ export function CheckoutForm() {
                 CEP para consultar entrega <span className="text-xs text-muted">(opcional)</span>
             </label>
             <input
+                ref={cepRef}
                 id="customer-cep"
                 type="text"
                 autoComplete="postal-code"
