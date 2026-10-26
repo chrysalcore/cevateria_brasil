@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import { buildOrderMessage, getSubtotal, whatsappUrl } from '../../helpers/whatsapp';
+
 import { formatPrice } from '../../helpers/formatPrice';
+import { buildOrderMessage, getSubtotal, whatsappUrl } from '../../helpers/whatsapp';
 import { useCart } from '../../hooks/useCart';
 import { cepSchema } from '../../schemas/cepSchema';
 import { Button } from '../global/Button';

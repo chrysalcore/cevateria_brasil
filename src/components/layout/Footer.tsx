@@ -8,7 +8,14 @@ export function Footer() {
             <WaveDivider className="text-surface" />
             <div className="wrap grid grid-cols-2 items-center gap-x-2.5 gap-y-6 pt-14 pb-10 md:flex md:flex-wrap md:justify-between md:gap-8 md:pt-20 md:pb-14">
                 <a href="#inicio">
-                    <img src={logo} alt="Cevateria Brasil, início" width={189} height={192} loading="lazy" className="size-16" />
+                    <img
+                        src={logo}
+                        alt="Cevateria Brasil, início"
+                        width={189}
+                        height={192}
+                        loading="lazy"
+                        className="size-16"
+                    />
                 </a>
                 <p className="text-sm leading-relaxed text-muted">
                     Cápsulas de cevada com chocolate.

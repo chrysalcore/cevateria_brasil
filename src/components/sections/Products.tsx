@@ -1,4 +1,5 @@
 import { useState } from 'react';
+
 import { products } from '../../data/products';
 import { formatPrice } from '../../helpers/formatPrice';
 import { useCart } from '../../hooks/useCart';
@@ -31,7 +32,9 @@ export function Products() {
                 <div className="mb-7 md:mb-9 md:flex md:items-end md:justify-between">
                     <div>
                         <Eyebrow>Pequena cápsula, grande momento</Eyebrow>
-                        <h2 className="mt-3 font-serif text-4xl leading-tight tracking-tight">Seu próximo sabor favorito.</h2>
+                        <h2 className="mt-3 font-serif text-4xl leading-tight tracking-tight">
+                            Seu próximo sabor favorito.
+                        </h2>
                     </div>
                     <p className="mt-4 leading-relaxed text-muted md:mt-0">
                         Uma para experimentar.
@@ -56,7 +59,9 @@ export function Products() {
 
                         <div className="mt-5 mb-4 flex items-center justify-between">
                             <div>
-                                <strong className="block font-serif text-3xl font-normal">{formatPrice(selected.cents)}</strong>
+                                <strong className="block font-serif text-3xl font-normal">
+                                    {formatPrice(selected.cents)}
+                                </strong>
                                 <small className="text-xs text-muted">
                                     {selected.capsules === 1 ? '1 cápsula' : `${selected.capsules} cápsulas por kit`}
                                 </small>

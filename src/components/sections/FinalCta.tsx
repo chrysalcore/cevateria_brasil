@@ -7,7 +7,7 @@ export function FinalCta() {
     const revealRef = useReveal<HTMLDivElement>();
 
     return (
-        <section className="band-dark relative pt-20 pb-30 text-center md:pt-28 md:pb-46">
+        <section className="relative band-dark pt-20 pb-30 text-center md:pt-28 md:pb-46">
             <WaveDivider className="text-accent" />
             <div ref={revealRef} className="wrap *:reveal">
                 <Icon name="heart" className="mx-auto mb-3 size-9 text-highlight-soft" />

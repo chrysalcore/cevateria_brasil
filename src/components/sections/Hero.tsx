@@ -1,6 +1,6 @@
 import ritual from '../../assets/images/ritual.webp';
-import { Button } from '../global/Button';
 import { ArchImage } from '../global/ArchImage';
+import { Button } from '../global/Button';
 import { Eyebrow } from '../global/Eyebrow';
 import { Icon } from '../global/Icon';
 

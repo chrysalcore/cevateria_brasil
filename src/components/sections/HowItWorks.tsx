@@ -1,9 +1,9 @@
 import pedido from '../../assets/images/pedido.webp';
 import { steps } from '../../data/steps';
+import { useReveal } from '../../hooks/useReveal';
 import { ArchImage } from '../global/ArchImage';
 import { Eyebrow } from '../global/Eyebrow';
 import { WaveDivider } from '../global/WaveDivider';
-import { useReveal } from '../../hooks/useReveal';
 
 export function HowItWorks() {
     const revealRef = useReveal<HTMLDivElement>();

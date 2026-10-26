@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+
 import { useCart } from '../../hooks/useCart';
 import { Eyebrow } from '../global/Eyebrow';
 import { Icon } from '../global/Icon';

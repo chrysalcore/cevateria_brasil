@@ -1,16 +1,19 @@
 import leitura from '../../assets/images/leitura.webp';
+import { useReveal } from '../../hooks/useReveal';
 import { Eyebrow } from '../global/Eyebrow';
 import { TextLink } from '../global/TextLink';
 import { WaveDivider } from '../global/WaveDivider';
-import { useReveal } from '../../hooks/useReveal';
 
 export function Essence() {
     const revealRef = useReveal<HTMLDivElement>();
 
     return (
-        <section id="essencia" className="band-dark relative pt-20 pb-30 md:pt-28 md:pb-46">
+        <section id="essencia" className="relative band-dark pt-20 pb-30 md:pt-28 md:pb-46">
             <WaveDivider className="text-accent" />
-            <div ref={revealRef} className="wrap grid items-center gap-8 md:grid-cols-[0.9fr_1.1fr] md:gap-10 lg:gap-24 *:reveal">
+            <div
+                ref={revealRef}
+                className="wrap grid items-center gap-8 *:reveal md:grid-cols-[0.9fr_1.1fr] md:gap-10 lg:gap-24"
+            >
                 <div className="relative mx-auto h-96 w-full max-w-xs rounded-t-arch bg-surface-strong md:h-120 md:max-w-sm">
                     <img
                         src={leitura}
@@ -20,8 +23,11 @@ export function Essence() {
                         loading="lazy"
                         className="size-full rounded-[inherit] object-cover"
                     />
-                    <span aria-hidden="true" className="pointer-events-none absolute inset-3 rounded-[inherit] border border-on-dark/70" />
-                    <i className="absolute inset-x-6 bottom-6 rounded-sm bg-page/95 px-4 py-3 text-center font-serif text-ink text-lg leading-normal">
+                    <span
+                        aria-hidden="true"
+                        className="pointer-events-none absolute inset-3 rounded-[inherit] border border-on-dark/70"
+                    />
+                    <i className="absolute inset-x-6 bottom-6 rounded-sm bg-page/95 px-4 py-3 text-center font-serif text-lg leading-normal text-ink">
                         um pouco de calma,
                         <br />
                         uma dose de carinho.
@@ -41,7 +47,9 @@ export function Essence() {
                         É por isso que cevada e chocolate se encontram por aqui: para convidar você a desacelerar e
                         saborear o agora.
                     </p>
-                    <TextLink href="#produtos" variant="light">Conheça essa combinação</TextLink>
+                    <TextLink href="#produtos" variant="light">
+                        Conheça essa combinação
+                    </TextLink>
                 </div>
             </div>
         </section>

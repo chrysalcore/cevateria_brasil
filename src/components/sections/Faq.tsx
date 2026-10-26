@@ -1,10 +1,10 @@
 import { QUESTION_MESSAGE } from '../../data/contact';
 import { faq } from '../../data/faq';
 import { whatsappUrl } from '../../helpers/whatsapp';
+import { useReveal } from '../../hooks/useReveal';
 import { Eyebrow } from '../global/Eyebrow';
 import { Icon } from '../global/Icon';
 import { TextLink } from '../global/TextLink';
-import { useReveal } from '../../hooks/useReveal';
 
 export function Faq() {
     const revealRef = useReveal<HTMLElement>();

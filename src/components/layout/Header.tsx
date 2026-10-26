@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import { useCart } from '../../hooks/useCart';
+
 import logo from '../../assets/images/logo.webp';
+import { useCart } from '../../hooks/useCart';
 import { Icon } from '../global/Icon';
 
 const links = [
@@ -15,9 +16,15 @@ export function Header({ onOpenCart }: { onOpenCart: () => void }) {
     const [menuOpen, setMenuOpen] = useState(false);
 
     return (
-        <header className="wrap relative flex h-20 items-center justify-between gap-4 md:h-28 md:gap-8">
+        <header className="relative wrap flex h-20 items-center justify-between gap-4 md:h-28 md:gap-8">
             <a href="#inicio" className="shrink-0">
-                <img src={logo} alt="Cevateria Brasil, início" width={189} height={192} className="size-16 md:size-22" />
+                <img
+                    src={logo}
+                    alt="Cevateria Brasil, início"
+                    width={189}
+                    height={192}
+                    className="size-16 md:size-22"
+                />
             </a>
 
             <nav
@@ -26,7 +33,10 @@ export function Header({ onOpenCart }: { onOpenCart: () => void }) {
                 className={`${menuOpen ? 'flex' : 'hidden'} absolute inset-x-0 top-full z-10 flex-col gap-6 border border-divider bg-page p-6 text-sm shadow-lg md:static md:flex md:flex-row md:gap-5 md:border-0 md:bg-transparent md:p-0 md:shadow-none lg:gap-8`}
             >
                 {links.map(({ href, label }) => (
-                    <a key={href} href={href} className="relative w-fit transition after:absolute after:inset-x-0 after:-bottom-1 after:h-px after:origin-left after:scale-x-0 after:bg-highlight after:transition-transform after:duration-300 after:ease-smooth hover:text-highlight hover:after:scale-x-100"
+                    <a
+                        key={href}
+                        href={href}
+                        className="relative w-fit transition after:absolute after:inset-x-0 after:-bottom-1 after:h-px after:origin-left after:scale-x-0 after:bg-highlight after:transition-transform after:duration-300 after:ease-smooth hover:text-highlight hover:after:scale-x-100"
                         onClick={() => setMenuOpen(false)}
                     >
                         {label}
@@ -42,7 +52,12 @@ export function Header({ onOpenCart }: { onOpenCart: () => void }) {
             >
                 <Icon name="bag" />
                 <span className="hidden lg:inline">Meu pedido</span>
-                <b key={count} className="grid size-5 motion-safe:animate-bump place-items-center rounded-full bg-ink text-xs font-medium text-page">{count}</b>
+                <b
+                    key={count}
+                    className="grid size-5 place-items-center rounded-full bg-ink text-xs font-medium text-page motion-safe:animate-bump"
+                >
+                    {count}
+                </b>
             </button>
 
             <button

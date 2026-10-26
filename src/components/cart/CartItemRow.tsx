@@ -22,7 +22,11 @@ export function CartItemRow({ item }: { item: CartItem }) {
                     Remover
                 </button>
             </div>
-            <QuantityControl value={item.quantity} label={item.name} onChange={(quantity) => updateQuantity(item.id, quantity)} />
+            <QuantityControl
+                value={item.quantity}
+                label={item.name}
+                onChange={(quantity) => updateQuantity(item.id, quantity)}
+            />
         </li>
     );
 }

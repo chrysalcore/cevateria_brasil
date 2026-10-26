@@ -1,0 +1,13 @@
+{
+    "printWidth": 120,
+    "tabWidth": 4,
+    "singleQuote": true,
+    "plugins": ["prettier-plugin-tailwindcss"],
+    "tailwindStylesheet": "./src/index.css",
+    "overrides": [
+        {
+            "files": ["*.json", "*.yml", "*.yaml", "*.html", "eslint.config.mjs"],
+            "options": { "tabWidth": 2 }
+        }
+    ]
+}

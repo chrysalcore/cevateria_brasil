@@ -1,4 +1,5 @@
 import { useState } from 'react';
+
 import { CartDialog } from './components/cart/CartDialog';
 import { Announcement } from './components/layout/Announcement';
 import { Footer } from './components/layout/Footer';
@@ -16,10 +17,7 @@ export function App() {
 
     return (
         <>
-            <a
-                href="#conteudo"
-                className="fixed -top-24 left-2.5 z-30 bg-page p-3 focus:top-2.5"
-            >
+            <a href="#conteudo" className="fixed -top-24 left-2.5 z-30 bg-page p-3 focus:top-2.5">
                 Pular para o conteúdo
             </a>
             <Announcement />
