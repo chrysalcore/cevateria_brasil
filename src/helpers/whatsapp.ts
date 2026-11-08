@@ -1,4 +1,5 @@
 import { WHATSAPP_NUMBER } from '../data/contact';
+import { pt } from '../data/i18n/pt';
 import type { CartItem } from '../types';
 import { getSubtotal } from './cart';
 import { formatPrice } from './formatPrice';
@@ -12,7 +13,10 @@ export function buildOrderMessage(cart: CartItem[], name: string, cep: string) {
         `Olá! ${name ? `Meu nome é ${name}. ` : ''}Gostaria de fazer um pedido na Cevateria Brasil.`,
         '',
         'Cevada com chocolate em cápsulas:',
-        ...cart.map((item) => `${item.quantity} × ${item.name} — ${formatPrice(item.quantity * item.cents)}`),
+        ...cart.map(
+            (item) =>
+                `${item.quantity} × ${pt.product.name(item.capsules)} — ${formatPrice(item.quantity * item.cents)}`,
+        ),
         '',
         `Subtotal: ${formatPrice(getSubtotal(cart))} (sem frete).`,
         ...(cep ? [`CEP para entrega: ${cep}`] : []),

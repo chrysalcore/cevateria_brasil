@@ -1,7 +1,9 @@
 import { products } from '../../../data/products';
+import { useI18n } from '../../../hooks/useI18n';
 import type { Product } from '../../../types';
 
 export function ProductGallery({ shown }: { shown: Product }) {
+    const { t } = useI18n();
     const index = products.findIndex((product) => product.id === shown.id);
 
     return (
@@ -14,7 +16,7 @@ export function ProductGallery({ shown }: { shown: Product }) {
                     <img
                         key={product.id}
                         src={product.image}
-                        alt={product.alt}
+                        alt={t.product.alt(product.capsules)}
                         aria-hidden={product.id !== shown.id}
                         width={600}
                         height={800}
@@ -27,10 +29,10 @@ export function ProductGallery({ shown }: { shown: Product }) {
                 aria-hidden="true"
                 className="absolute top-5 left-5 rounded-sm bg-page/95 px-3 py-2 text-xs tracking-wider uppercase"
             >
-                {shown.name}
+                {t.product.name(shown.capsules)}
             </span>
             <small className="absolute right-3 bottom-2.5 text-[0.625rem] text-white [text-shadow:0_1px_4px_var(--color-ink)]">
-                Imagem ilustrativa
+                {t.illustrative}
             </small>
         </div>
     );

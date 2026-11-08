@@ -3,10 +3,12 @@ import { useRef, useState } from 'react';
 import { formatPrice } from '../../helpers/formatPrice';
 import { buildOrderMessage, whatsappUrl } from '../../helpers/whatsapp';
 import { useCart } from '../../hooks/useCart';
+import { useI18n } from '../../hooks/useI18n';
 import { cepSchema } from '../../schemas/cepSchema';
 import { Button } from '../global/Button';
 
 export function CheckoutForm() {
+    const { t } = useI18n();
     const { cart, subtotal } = useCart();
     const cepRef = useRef<HTMLInputElement>(null);
     const [name, setName] = useState('');
@@ -17,7 +19,7 @@ export function CheckoutForm() {
         const result = cepSchema.safeParse(cep);
         if (!result.success) {
             event.preventDefault();
-            setCepError(result.error.issues[0].message);
+            setCepError(t.checkout.cepError);
             cepRef.current?.focus();
         }
     }
@@ -27,27 +29,27 @@ export function CheckoutForm() {
     return (
         <div>
             <div className="mt-6 flex items-center justify-between text-sm">
-                <span>Subtotal</span>
+                <span>{t.checkout.subtotal}</span>
                 <strong className="font-serif text-2xl font-normal">{formatPrice(subtotal)}</strong>
             </div>
-            <p className="mt-1 text-xs text-muted">Frete a combinar pelo WhatsApp.</p>
+            <p className="mt-1 text-xs text-muted">{t.checkout.shipping}</p>
 
             <label htmlFor="customer-name" className="mt-5 mb-2 block text-sm">
-                Seu nome <span className="text-xs text-muted">(opcional)</span>
+                {t.checkout.name} <span className="text-xs text-muted">{t.checkout.optional}</span>
             </label>
             <input
                 id="customer-name"
                 type="text"
                 autoComplete="given-name"
                 maxLength={80}
-                placeholder="Como podemos chamar você?"
+                placeholder={t.checkout.namePlaceholder}
                 value={name}
                 onChange={(event) => setName(event.target.value)}
                 className="w-full rounded border border-control bg-transparent p-3 text-base"
             />
 
             <label htmlFor="customer-cep" className="mt-5 mb-2 block text-sm">
-                CEP para consultar entrega <span className="text-xs text-muted">(opcional)</span>
+                {t.checkout.cep} <span className="text-xs text-muted">{t.checkout.optional}</span>
             </label>
             <input
                 ref={cepRef}
@@ -72,12 +74,10 @@ export function CheckoutForm() {
 
             <div className="mt-5">
                 <Button href={whatsappUrl(message)} external wide onClick={handleSend}>
-                    Enviar pedido pelo WhatsApp
+                    {t.checkout.send}
                 </Button>
             </div>
-            <small className="mt-3 block text-xs leading-relaxed text-muted">
-                O envio abre uma conversa. Disponibilidade, frete e pagamento são confirmados no atendimento.
-            </small>
+            <small className="mt-3 block text-xs leading-relaxed text-muted">{t.checkout.note}</small>
         </div>
     );
 }

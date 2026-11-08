@@ -1,4 +1,5 @@
 import { MAX_QUANTITY, MIN_QUANTITY } from '../../data/products';
+import { useI18n } from '../../hooks/useI18n';
 import { Icon } from './Icon';
 
 export function QuantityControl({
@@ -10,12 +11,14 @@ export function QuantityControl({
     label: string;
     onChange: (quantity: number) => void;
 }) {
+    const { t } = useI18n();
+
     return (
         <div className="flex h-12 min-w-28 shrink-0 items-center justify-around rounded border border-control">
             <button
                 type="button"
                 className="size-11 cursor-pointer disabled:cursor-default disabled:opacity-35"
-                aria-label={`Diminuir ${label}`}
+                aria-label={t.quantity.decrease(label)}
                 disabled={value <= MIN_QUANTITY}
                 onClick={() => onChange(value - 1)}
             >
@@ -27,7 +30,7 @@ export function QuantityControl({
             <button
                 type="button"
                 className="size-11 cursor-pointer disabled:cursor-default disabled:opacity-35"
-                aria-label={`Aumentar ${label}`}
+                aria-label={t.quantity.increase(label)}
                 disabled={value >= MAX_QUANTITY}
                 onClick={() => onChange(value + 1)}
             >

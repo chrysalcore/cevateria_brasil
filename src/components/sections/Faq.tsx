@@ -1,12 +1,13 @@
 import { QUESTION_MESSAGE } from '../../data/contact';
-import { faq } from '../../data/faq';
 import { whatsappUrl } from '../../helpers/whatsapp';
+import { useI18n } from '../../hooks/useI18n';
 import { useReveal } from '../../hooks/useReveal';
 import { Eyebrow } from '../global/Eyebrow';
 import { Icon } from '../global/Icon';
 import { TextLink } from '../global/TextLink';
 
 export function Faq() {
+    const { t } = useI18n();
     const revealRef = useReveal<HTMLElement>();
 
     return (
@@ -16,17 +17,17 @@ export function Faq() {
             className="wrap grid gap-6 pt-12 pb-22 *:reveal md:grid-cols-[1fr_1.35fr] md:gap-10 md:pt-20 md:pb-38 lg:gap-16"
         >
             <div>
-                <Eyebrow>Podemos ajudar?</Eyebrow>
+                <Eyebrow>{t.faq.eyebrow}</Eyebrow>
                 <h2 className="mt-4 font-serif text-4xl leading-tight tracking-tight">
-                    Antes da
-                    <br className="hidden md:inline" /> primeira <em>pausa.</em>
+                    {t.faq.titleStart}
+                    <br className="hidden md:inline" /> {t.faq.titleEnd} <em>{t.faq.titleEmphasis}</em>
                 </h2>
                 <TextLink href={whatsappUrl(QUESTION_MESSAGE)} external>
-                    Converse com a gente
+                    {t.faq.contact}
                 </TextLink>
             </div>
             <div>
-                {faq.map(({ question, answer }) => (
+                {t.faq.items.map(({ question, answer }) => (
                     <details key={question} className="group border-b border-divider">
                         <summary className="flex cursor-pointer list-none items-center justify-between gap-4 py-5 leading-relaxed">
                             {question}

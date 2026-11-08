@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { products } from '../../data/products';
 import { formatPrice } from '../../helpers/formatPrice';
 import { useCart } from '../../hooks/useCart';
+import { useI18n } from '../../hooks/useI18n';
 import { useReveal } from '../../hooks/useReveal';
 import { useToast } from '../../hooks/useToast';
 import type { Product } from '../../types';
@@ -14,6 +15,7 @@ import { ProductGallery } from './products/ProductGallery';
 import { ProductOptions } from './products/ProductOptions';
 
 export function Products() {
+    const { t } = useI18n();
     const { addItem } = useCart();
     const { message, visible, showToast } = useToast();
     const [selected, setSelected] = useState<Product>(products[0]);
@@ -23,7 +25,7 @@ export function Products() {
 
     function handleAdd() {
         addItem(selected, quantity);
-        showToast(`${selected.name} no pedido. Confira em “Meu pedido”.`);
+        showToast(t.products.added(t.product.name(selected.capsules)));
     }
 
     return (
@@ -31,14 +33,12 @@ export function Products() {
             <section ref={revealRef} id="produtos" className="wrap pt-14 pb-24 *:reveal md:pt-20 md:pb-38">
                 <div className="mb-7 md:mb-9 md:flex md:items-end md:justify-between">
                     <div>
-                        <Eyebrow>Pequena cápsula, grande momento</Eyebrow>
-                        <h2 className="mt-3 font-serif text-4xl leading-tight tracking-tight">
-                            Seu próximo sabor favorito.
-                        </h2>
+                        <Eyebrow>{t.products.eyebrow}</Eyebrow>
+                        <h2 className="mt-3 font-serif text-4xl leading-tight tracking-tight">{t.products.title}</h2>
                     </div>
                     <p className="mt-4 leading-relaxed text-muted md:mt-0">
-                        Uma para experimentar.
-                        <br className="hidden md:inline" /> Um kit para se apaixonar.
+                        {t.products.asideLines[0]}
+                        <br className="hidden md:inline" /> {t.products.asideLines[1]}
                     </p>
                 </div>
 
@@ -46,14 +46,12 @@ export function Products() {
                     <ProductGallery shown={preview ?? selected} />
 
                     <div>
-                        <Eyebrow>Escolha sua pausa</Eyebrow>
+                        <Eyebrow>{t.products.chooseEyebrow}</Eyebrow>
                         <h3 className="mt-3 font-serif text-4xl leading-tight tracking-tight">
-                            Um carinho.
-                            <br className="hidden md:inline" /> <em>Vários momentos.</em>
+                            {t.products.chooseTitle}
+                            <br className="hidden md:inline" /> <em>{t.products.chooseEmphasis}</em>
                         </h3>
-                        <p className="mt-4 leading-relaxed text-muted md:max-w-md">
-                            Da primeira cápsula ao seu kit favorito: escolha a quantidade que combina com você.
-                        </p>
+                        <p className="mt-4 leading-relaxed text-muted md:max-w-md">{t.products.chooseIntro}</p>
 
                         <ProductOptions selected={selected} onSelect={setSelected} onPreview={setPreview} />
 
@@ -62,19 +60,15 @@ export function Products() {
                                 <strong className="block font-serif text-3xl font-normal">
                                     {formatPrice(selected.cents)}
                                 </strong>
-                                <small className="text-xs text-muted">
-                                    {selected.capsules === 1 ? '1 cápsula' : `${selected.capsules} cápsulas por kit`}
-                                </small>
+                                <small className="text-xs text-muted">{t.product.unit(selected.capsules)}</small>
                             </div>
-                            <QuantityControl value={quantity} label="quantidade" onChange={setQuantity} />
+                            <QuantityControl value={quantity} label={t.products.quantityLabel} onChange={setQuantity} />
                         </div>
 
                         <Button wide onClick={handleAdd}>
-                            Adicionar ao meu pedido
+                            {t.products.add}
                         </Button>
-                        <small className="mt-3 block text-xs leading-relaxed text-muted">
-                            Frete e disponibilidade a combinar. Confirme a compatibilidade antes da compra.
-                        </small>
+                        <small className="mt-3 block text-xs leading-relaxed text-muted">{t.products.note}</small>
                     </div>
                 </div>
             </section>

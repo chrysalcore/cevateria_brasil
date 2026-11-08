@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 
 import { useCart } from '../../hooks/useCart';
+import { useI18n } from '../../hooks/useI18n';
 import { Eyebrow } from '../global/Eyebrow';
 import { Icon } from '../global/Icon';
 import { CartItemRow } from './CartItemRow';
@@ -8,6 +9,7 @@ import { CheckoutForm } from './CheckoutForm';
 import { EmptyCart } from './EmptyCart';
 
 export function CartDialog({ open, onClose }: { open: boolean; onClose: () => void }) {
+    const { t } = useI18n();
     const { cart } = useCart();
     const dialogRef = useRef<HTMLDialogElement>(null);
 
@@ -28,18 +30,18 @@ export function CartDialog({ open, onClose }: { open: boolean; onClose: () => vo
         >
             <div className="px-5 py-6 md:p-8">
                 <div className="flex items-center justify-between">
-                    <Eyebrow>Sua próxima pausa</Eyebrow>
+                    <Eyebrow>{t.cart.eyebrow}</Eyebrow>
                     <button
                         type="button"
                         className="grid size-11 cursor-pointer place-items-center"
-                        aria-label="Fechar meu pedido"
+                        aria-label={t.cart.close}
                         onClick={onClose}
                     >
                         <Icon name="close" className="size-6" />
                     </button>
                 </div>
                 <h2 id="cart-title" className="mt-3 mb-6 font-serif text-3xl tracking-tight md:text-4xl">
-                    Meu pedido
+                    {t.cart.title}
                 </h2>
                 {cart.length === 0 ? (
                     <EmptyCart onExplore={onClose} />

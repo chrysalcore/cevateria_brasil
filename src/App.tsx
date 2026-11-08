@@ -11,14 +11,16 @@ import { Hero } from './components/sections/Hero';
 import { HowItWorks } from './components/sections/HowItWorks';
 import { Products } from './components/sections/Products';
 import { Values } from './components/sections/Values';
+import { useI18n } from './hooks/useI18n';
 
 export function App() {
+    const { t } = useI18n();
     const [cartOpen, setCartOpen] = useState(false);
 
     return (
         <>
             <a href="#conteudo" className="fixed -top-24 left-2.5 z-30 bg-page p-3 focus:top-2.5">
-                Pular para o conteúdo
+                {t.skipLink}
             </a>
             <Announcement />
             <Header onOpenCart={() => setCartOpen(true)} />

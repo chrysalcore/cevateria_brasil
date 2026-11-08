@@ -1,8 +1,11 @@
 import logo from '../../assets/images/logo.webp';
+import { useI18n } from '../../hooks/useI18n';
 import { Icon } from '../global/Icon';
 import { WaveDivider } from '../global/WaveDivider';
 
 export function Footer() {
+    const { t } = useI18n();
+
     return (
         <footer className="relative bg-surface">
             <WaveDivider className="text-surface" />
@@ -10,7 +13,7 @@ export function Footer() {
                 <a href="#inicio">
                     <img
                         src={logo}
-                        alt="Cevateria Brasil, início"
+                        alt={t.header.logoAlt}
                         width={189}
                         height={192}
                         loading="lazy"
@@ -18,18 +21,18 @@ export function Footer() {
                     />
                 </a>
                 <p className="text-sm leading-relaxed text-muted">
-                    Cápsulas de cevada com chocolate.
+                    {t.footer.taglineLines[0]}
                     <br />
-                    Pequenas pausas, bons momentos.
+                    {t.footer.taglineLines[1]}
                 </p>
                 <a href="#duvidas" className="inline-flex items-center gap-1.5 text-sm transition hover:text-highlight">
-                    Dúvidas frequentes
+                    {t.footer.faq}
                     <Icon name="arrow-up-right" className="size-4" />
                 </a>
                 <small className="text-right text-xs leading-relaxed text-muted">
-                    © {new Date().getFullYear()} Cevateria Brasil. Todos os direitos reservados.
+                    © {new Date().getFullYear()} Cevateria Brasil. {t.footer.rights}
                     <br />
-                    Desenvolvido por{' '}
+                    {t.footer.developedBy}{' '}
                     <a
                         href="https://chrysalcore.com"
                         target="_blank"
